@@ -137,9 +137,9 @@ export const aboutMe = {
       company: "SnapGrab.inc",
       period: "September 2022 - December 2023",
       achievements: [
-        "Developed ML-powered sentiment analysis pipelines for customer insights.",
         "Built and maintained interactive UI components using React to enhance user engagement.",
         "Worked closely with a small, fast-paced team to triage issues, debug features, and manage CI/CD deployments using Jenkins and Git.",
+        "Contributed to AI feature development by integrating basic sentiment analysis for user feedback insights. ",
       ],
     },
   ],

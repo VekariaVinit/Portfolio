@@ -127,7 +127,7 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Passionate AI Engineer building production‑ready AI/ML apps, automating
+          Passionate Frontend Developer and AI Engineer building production‑ready AI/ML apps, automating
           operations, and crafting full‑stack platforms with modern tools.
         </motion.p>
         <motion.div

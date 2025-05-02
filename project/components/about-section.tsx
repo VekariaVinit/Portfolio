@@ -34,7 +34,7 @@ export function AboutSection() {
               {aboutMe.description}
             </p>
             <Button className="gap-2" asChild>
-              <a href="/Vinit Vekaria.pdf" download="Vinit_Vekaria_Resume.pdf">
+              <a href="./VinitVekaria.pdf" download="Vinit_Vekaria_Resume.pdf">
                 <DownloadCloud className="h-4 w-4" />
                 Download Resume
               </a>
