@@ -61,7 +61,8 @@ export function HeroSection() {
 
     function init() {
       for (let i = 0; i < numberOfParticles; i++) {
-        particlesArray.push(new Particle(canvas.width, canvas.height));
+        particlesArray.push(new Particle(canvas!.width, canvas!.height));
+
       }
     }
 
