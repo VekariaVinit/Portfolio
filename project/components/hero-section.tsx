@@ -30,28 +30,28 @@ export function HeroSection() {
       speedY: number;
       color: string;
 
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+      constructor(width: number, height: number) {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
         this.size = Math.random() * 5 + 1;
         this.speedX = Math.random() * 3 - 1.5;
         this.speedY = Math.random() * 3 - 1.5;
         this.color = colors[Math.floor(Math.random() * colors.length)];
       }
 
-      update() {
+      update(width: number, height: number) {
         this.x += this.speedX;
         this.y += this.speedY;
 
-        if (this.x > canvas.width || this.x < 0) {
+        if (this.x > width || this.x < 0) {
           this.speedX = -this.speedX;
         }
-        if (this.y > canvas.height || this.y < 0) {
+        if (this.y > height || this.y < 0) {
           this.speedY = -this.speedY;
         }
       }
 
-      draw() {
+      draw(ctx: CanvasRenderingContext2D) {
         ctx.fillStyle = this.color;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -61,26 +61,27 @@ export function HeroSection() {
 
     function init() {
       for (let i = 0; i < numberOfParticles; i++) {
-        particlesArray.push(new Particle());
+        particlesArray.push(new Particle(canvas.width, canvas.height));
       }
     }
 
     function animate() {
+      if (!ctx || !canvas) return;
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       for (let i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update();
-        particlesArray[i].draw();
-        
-        // Connect particles with lines
+        particlesArray[i].update(canvas.width, canvas.height);
+        particlesArray[i].draw(ctx);
+
         for (let j = i; j < particlesArray.length; j++) {
           const dx = particlesArray[i].x - particlesArray[j].x;
           const dy = particlesArray[i].y - particlesArray[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
-          
+
           if (distance < 100) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(171, 128, 246, ${0.2 - distance/500})`;
+            ctx.strokeStyle = `rgba(171, 128, 246, ${0.2 - distance / 500})`;
             ctx.lineWidth = 0.5;
             ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
             ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
@@ -88,6 +89,7 @@ export function HeroSection() {
           }
         }
       }
+
       requestAnimationFrame(animate);
     }
 
@@ -95,6 +97,7 @@ export function HeroSection() {
     animate();
 
     const handleResize = () => {
+      if (!canvas) return;
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
@@ -108,10 +111,7 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 -z-10"
-      />
+      <canvas ref={canvasRef} className="absolute inset-0 -z-10" />
       <div className="container px-4 z-10 flex flex-col items-center text-center">
         <motion.h1
           className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-blue-500 to-pink-500"
@@ -137,14 +137,10 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <Button size="lg" className="gap-2" asChild>
-            <a href="#projects">
-              View Projects
-            </a>
+            <a href="#projects">View Projects</a>
           </Button>
           <Button variant="outline" size="lg" className="gap-2" asChild>
-            <a href="#contact">
-              Contact Me
-            </a>
+            <a href="#contact">Contact Me</a>
           </Button>
         </motion.div>
       </div>
