@@ -125,7 +125,7 @@ export const aboutMe = {
     {
       position: "Software Developer ",
       company: "Mastronardi Produce ",
-      period: "Mau 2025 - Present",
+      period: "May 2025 - Present",
       achievements: [
         "Built dashboards & new views in Warehouse Management App to improve operational visibility.",
         "Integrated APIs with React/Next.js for real-time synchronization.",
