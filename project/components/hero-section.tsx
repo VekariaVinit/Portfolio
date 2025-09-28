@@ -128,8 +128,8 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Passionate Frontend Developer and AI Engineer building production‑ready AI/ML apps, automating
-          operations, and crafting full‑stack platforms with modern tools.
+           Passionate Frontend Developer and AI Engineer building production‑ready softwares, automating
+          operations, and crafting  platforms with modern tools.
         </motion.p>
         <motion.div
           className="flex flex-col sm:flex-row gap-4"
