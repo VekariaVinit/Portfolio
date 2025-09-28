@@ -123,6 +123,17 @@ export const aboutMe = {
     "Proficient in Python, LangChain, React, FastAPI, and cloud-native architectures, with a focus on scalable LLM-based systems and customer-facing solutions.",
   experience: [
     {
+      position: "Software Developer ",
+      company: "Mastronardi Produce ",
+      period: "Mau 2025 - Present",
+      achievements: [
+        "Built dashboards & new views in Warehouse Management App to improve operational visibility.",
+        "Integrated APIs with React/Next.js for real-time synchronization.",
+        "Conducted regression & performance testing using Swagger & Postman.",
+        "Hands-on experience with Microsoft Azure"
+      ],
+    },
+    {
       position: "AI Agent Developer (Freelance)",
       company: "Self-Employed",
       period: "June 2024 - Present",
@@ -130,16 +141,6 @@ export const aboutMe = {
         "Built scalable AI agents using OpenAI APIs and LangChain for customer support and automation.",
         "Integrated real-time data workflows with FastAPI and n8n on cloud-native architecture.",
         "Delivered performance monitoring, fallback logic, and modular deployment-ready systems.",
-      ],
-    },
-    {
-      position: "Software Developer Intern",
-      company: "SnapGrab.inc",
-      period: "September 2022 - December 2023",
-      achievements: [
-        "Built and maintained interactive UI components using React to enhance user engagement.",
-        "Worked closely with a small, fast-paced team to triage issues, debug features, and manage CI/CD deployments using Jenkins and Git.",
-        "Contributed to AI feature development by integrating basic sentiment analysis for user feedback insights. ",
       ],
     },
   ],
