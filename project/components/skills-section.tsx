@@ -25,7 +25,7 @@ import { cn } from "@/lib/utils";
 type CategoryType =
   | "All"
   | "AI"
-  | "Data Engineering"
+  | "Database"
   | "Frontend"
   | "Backend"
   | "Other";
@@ -33,7 +33,7 @@ type CategoryType =
 const CATEGORY_COLORS: Record<CategoryType, string> = {
   All: "hsl(var(--chart-1))",
   AI: "hsl(var(--chart-1))",
-  "Data Engineering": "hsl(var(--chart-2))",
+  Database: "hsl(var(--chart-2))",
   Frontend: "hsl(var(--chart-3))",
   Backend: "hsl(var(--chart-4))",
   Other: "hsl(var(--chart-5))",
@@ -41,10 +41,10 @@ const CATEGORY_COLORS: Record<CategoryType, string> = {
 
 const CATEGORIES: CategoryType[] = [
   "All",
-  "AI",
-  "Data Engineering",
   "Frontend",
   "Backend",
+  "Database",
+  "AI",
   "Other",
 ];
 

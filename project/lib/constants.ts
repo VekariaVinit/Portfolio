@@ -14,46 +14,49 @@ export const navItems: NavItem[] = [
 export type Skill = {
   name: string;
   level: number;
-  category: "AI" | "Data Engineering" | "Frontend" | "Backend" | "Other";
+  category: "AI" | "Database" | "Frontend" | "Backend" | "Other";
 };
 
 export const skills: Skill[] = [
+  // Frontend
+  { name: "TypeScript", level: 90, category: "Frontend" },
+  { name: "React", level: 92, category: "Frontend" },
+  { name: "React Native", level: 82, category: "Frontend" },
+  { name: "Next.js", level: 88, category: "Frontend" },
+  { name: "JavaScript", level: 90, category: "Frontend" },
+  { name: "TailwindCSS", level: 85, category: "Frontend" },
+  { name: "Redux Toolkit", level: 80, category: "Frontend" },
+
+  // Backend
+  { name: "C#", level: 85, category: "Backend" },
+  { name: ".NET 8.0", level: 85, category: "Backend" },
+  { name: "Node.js", level: 85, category: "Backend" },
+  { name: "Express.js", level: 83, category: "Backend" },
+  { name: "FastAPI", level: 80, category: "Backend" },
+  { name: "Entity Framework Core", level: 80, category: "Backend" },
+
+  // Database
+  { name: "SQL Server", level: 85, category: "Database" },
+  { name: "MySQL", level: 85, category: "Database" },
+  { name: "Stored Procedures", level: 75, category: "Database" },
+
   // AI & ML
-  { name: "Python", level: 95, category: "AI" },
-  { name: "TensorFlow", level: 85, category: "AI" },
+  { name: "Python", level: 90, category: "AI" },
   { name: "OpenAI API", level: 85, category: "AI" },
   { name: "LangChain", level: 80, category: "AI" },
-  { name: "Huggingface", level: 80, category: "AI" },
-  { name: "GANs", level: 80, category: "AI" },
+  { name: "TensorFlow", level: 80, category: "AI" },
+  { name: "Huggingface", level: 75, category: "AI" },
+  { name: "Vector Databases", level: 78, category: "AI" },
 
-  // Data Engineering
-  { name: "SQL", level: 90, category: "Data Engineering" },
-  { name: "MySQL", level: 85, category: "Data Engineering" },
-  { name: "Pandas", level: 90, category: "Data Engineering" },
-  { name: "NumPy", level: 85, category: "Data Engineering" },
-
-  // Frontend
-  { name: "JavaScript", level: 90, category: "Frontend" },
-  { name: "React", level: 90, category: "Frontend" },
-  { name: "TailwindCSS", level: 80, category: "Frontend" },
-
-  // Backend & Cloud
-  { name: "Node.js", level: 85, category: "Backend" },
-  { name: "FastAPI", level: 85, category: "Backend" },
-  { name: "AWS", level: 85, category: "Backend" },
-
-  // Other Tools & DevOps
+  // Cloud, DevOps & Tools
+  { name: "Microsoft Azure", level: 85, category: "Other" },
+  { name: "Azure DevOps", level: 82, category: "Other" },
   { name: "Git", level: 90, category: "Other" },
-  { name: "GitHub Actions", level: 85, category: "Other" },
-  { name: "CI/CD", level: 80, category: "Other" },
-  { name: "JIRA", level: 85, category: "Other" },
-  { name: "Confluence", level: 85, category: "Other" },
-  { name: "Streamlit", level: 85, category: "Other" },
-  { name: "Selenium", level: 80, category: "Other" },
-  { name: "Pytest", level: 80, category: "Other" },
-  { name: "n8n", level: 80, category: "Other" },
-  { name: "Power BI", level: 85, category: "Other" },
-  { name: "Tableau", level: 85, category: "Other" },
+  { name: "Docker", level: 75, category: "Other" },
+  { name: "Jenkins CI/CD", level: 78, category: "Other" },
+  { name: "Power BI", level: 80, category: "Other" },
+  { name: "Tableau", level: 80, category: "Other" },
+  { name: "Jira", level: 85, category: "Other" },
 ];
 
 export type Project = {
@@ -118,29 +121,31 @@ export const projects: Project[] = [
 
 export const aboutMe = {
   intro:
-    "Inventive and results-driven AI/ML Engineer with experience building production-ready AI agents, full-stack platforms, and visualization tools to solve real-world problems.",
+    "Full-Stack Software Developer with 1.5+ years of professional experience building enterprise-grade web, mobile, and cloud-native applications.",
   description:
-    "Proficient in Python, LangChain, React, FastAPI, and cloud-native architectures, with a focus on scalable LLM-based systems and customer-facing solutions.",
+    "Proven expertise in React, Next.js, React Native, and TypeScript for frontend, and C#, .NET, Azure Functions for backend systems. Proficient in Python for AI/ML development and GenAI integrations, with a strong track record delivering scalable, maintainable, user-centric solutions.",
   experience: [
     {
-      position: "Software Developer ",
-      company: "Mastronardi Produce ",
-      period: "May 2025 - Present",
+      position: "Software Developer",
+      company: "SunsetGrown – Mastronardi",
+      period: "May 2025 – Present",
       achievements: [
-        "Built dashboards & new views in Warehouse Management App to improve operational visibility.",
-        "Integrated APIs with React/Next.js for real-time synchronization.",
-        "Conducted regression & performance testing using Swagger & Postman.",
-        "Hands-on experience with Microsoft Azure"
+        "Developed enterprise Warehouse Management System (WMS) using React, Next.js, and TypeScript, supporting multi-location distribution centers with real-time inventory tracking and order fulfilment dashboards.",
+        "Built cross-platform React Native mobile app for warehouse floor operations; integrated Zebra industrial barcode scanners, reducing operation time by 60%.",
+        "Architected multi-tenant REST API using Azure Functions (.NET 8.0) with schema-based data isolation, OAuth 2.0/JWT authentication, and JWKS-based signature verification.",
+        "Built 13+ Azure Function endpoints with Entity Framework Core 8.0, fault-tolerant scheduler with exponential backoff, and a three-tier health monitoring system.",
+        "Deployed via Azure DevOps CI/CD across Dev, QA, and Production; optimized API response times by 50% through caching and query optimization.",
+        "Created real-time analytics dashboard with KPI widgets tracking count accuracy, average velocity metrics, and historical trend analysis.",
       ],
     },
     {
       position: "AI Agent Developer (Freelance)",
       company: "Self-Employed",
-      period: "June 2024 - Present",
+      period: "June 2024 – Present",
       achievements: [
-        "Built scalable AI agents using OpenAI APIs and LangChain for customer support and automation.",
-        "Integrated real-time data workflows with FastAPI and n8n on cloud-native architecture.",
-        "Delivered performance monitoring, fallback logic, and modular deployment-ready systems.",
+        "Built and deployed AI agents using OpenAI APIs and LangChain for automation and customer support with FastAPI backend; leveraged ChromaDB for semantic search and RAG pipelines.",
+        "Integrated n8n workflow automation for real-time data processing and modular backend workflows.",
+        "Designed fallback logic, performance monitoring dashboards, and scalable deployment pipelines for production-ready AI systems.",
       ],
     },
   ],

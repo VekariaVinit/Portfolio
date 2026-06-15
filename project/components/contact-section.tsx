@@ -50,7 +50,7 @@ export function ContactSection() {
                     {
                       icon: <MapPin className="h-5 w-5 text-primary mx-auto" />,
                       label: "Location",
-                      value: "Toronto, CA",
+                      value: "Brampton, ON",
                     },
                   ].map((item, i) => (
                     <div key={i} className="flex flex-col items-center">
