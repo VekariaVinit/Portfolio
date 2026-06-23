@@ -66,36 +66,40 @@ export function HeroSection() {
       }
     }
 
+    let animationFrameId: number;
+
     function animate() {
       if (!ctx || !canvas) return;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       for (let i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update(canvas.width, canvas.height);
-        particlesArray[i].draw(ctx);
+        const particleI = particlesArray.at(i)!;
+        particleI.update(canvas.width, canvas.height);
+        particleI.draw(ctx);
 
         for (let j = i; j < particlesArray.length; j++) {
-          const dx = particlesArray[i].x - particlesArray[j].x;
-          const dy = particlesArray[i].y - particlesArray[j].y;
+          const particleJ = particlesArray.at(j)!;
+          const dx = particleI.x - particleJ.x;
+          const dy = particleI.y - particleJ.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < 100) {
             ctx.beginPath();
             ctx.strokeStyle = `rgba(171, 128, 246, ${0.2 - distance / 500})`;
             ctx.lineWidth = 0.5;
-            ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
-            ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+            ctx.moveTo(particleI.x, particleI.y);
+            ctx.lineTo(particleJ.x, particleJ.y);
             ctx.stroke();
           }
         }
       }
 
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
     }
 
     init();
-    animate();
+    animationFrameId = requestAnimationFrame(animate);
 
     const handleResize = () => {
       if (!canvas) return;
@@ -107,6 +111,7 @@ export function HeroSection() {
 
     return () => {
       window.removeEventListener("resize", handleResize);
+      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 

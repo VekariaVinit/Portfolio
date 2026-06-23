@@ -49,7 +49,9 @@ const CATEGORIES: CategoryType[] = [
 ];
 
 function getCategoryColor(cat: CategoryType) {
-  return CATEGORY_COLORS[cat] || CATEGORY_COLORS.All;
+  return Object.prototype.hasOwnProperty.call(CATEGORY_COLORS, cat)
+    ? CATEGORY_COLORS[cat]
+    : CATEGORY_COLORS.All;
 }
 
 interface ChartPanelProps {

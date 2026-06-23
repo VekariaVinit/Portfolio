@@ -1,6 +1,11 @@
 {
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "emailjs-com": "^3.2.0"
+    "emailjs-com": "^3.2.0",
+    "flatted": "^3.4.2",
+    "js-yaml": "^4.2.0",
+    "lodash": "^4.18.0",
+    "postcss": "^8.5.10",
+    "zod": "^3.22.3"
   }
 }
