@@ -331,6 +331,16 @@ const ChartLegendContent = React.forwardRef<
 );
 ChartLegendContent.displayName = 'ChartLegend';
 
+// Safe helper to access a config entry only if the key is an own property.
+function safeConfigLookup(
+  config: ChartConfig,
+  key: string
+): ChartConfig[string] | undefined {
+  return Object.prototype.hasOwnProperty.call(config, key)
+    ? Object.getOwnPropertyDescriptor(config, key)?.value
+    : undefined;
+}
+
 // Helper to extract item config from a payload.
 function getPayloadConfigFromPayload(
   config: ChartConfig,
@@ -365,11 +375,7 @@ function getPayloadConfigFromPayload(
     ] as string;
   }
 
-  return Object.prototype.hasOwnProperty.call(config, configLabelKey)
-    ? config[configLabelKey]
-    : Object.prototype.hasOwnProperty.call(config, key)
-    ? config[key as keyof typeof config]
-    : undefined;
+  return safeConfigLookup(config, configLabelKey) ?? safeConfigLookup(config, key);
 }
 
 export {

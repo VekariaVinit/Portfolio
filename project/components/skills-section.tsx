@@ -50,7 +50,7 @@ const CATEGORIES: CategoryType[] = [
 
 function getCategoryColor(cat: CategoryType) {
   return Object.prototype.hasOwnProperty.call(CATEGORY_COLORS, cat)
-    ? CATEGORY_COLORS[cat]
+    ? CATEGORY_COLORS[cat as keyof typeof CATEGORY_COLORS]
     : CATEGORY_COLORS.All;
 }
 
